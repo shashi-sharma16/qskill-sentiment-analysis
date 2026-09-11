@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sentiment Analysis</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+
+            <h1>Sentiment Analysis</h1>
+
+            <p>
+                Analyze the emotion and subjectivity of your text
+                using TextBlob.
+            </p>
+
+        </div>
+
+
+        <div class="input-section">
+
+            <form method="POST">
+
+                <label for="text">
+                    Enter your text
+                </label>
+
+                <textarea
+                    id="text"
+                    name="text"
+                    placeholder="Example: I really enjoyed this movie!"
+                    required
+                >{{ text }}</textarea>
+
+                <br><br>
+        <div class="button-group">
+            <button type="submit">
+                Analyze Sentiment
+            </button>
+
+            <a href="/" class="clear-button">
+                Clear
+            </a>
+        </div>
+
+            </form>
+
+        </div>
+
+
+        {% if sentiment %}
+
+        <div class="result">
+
+            <h2>Analysis Result</h2>
+
+
+            <div class="sentiment-box {{ sentiment|lower }}">
+
+                <p class="sentiment-label">
+                    Detected Sentiment
+                </p>
+
+                <p class="sentiment-value">
+                    {{ sentiment }}
+                </p>
+
+            </div>
+
+
+            <div class="scores">
+
+                <div class="score-card">
+
+                    <p>Polarity</p>
+
+                    <p>{{ polarity }}</p>
+
+                </div>
+
+
+                <div class="score-card">
+
+                    <p>Subjectivity</p>
+
+                    <p>{{ subjectivity }}</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endif %}
+
+
+        <div class="footer">
+
+            Powered by Flask & TextBlob
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

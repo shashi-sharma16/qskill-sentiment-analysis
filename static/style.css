@@ -1,0 +1,272 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #172554, #0f3d4c);
+    padding: 60px 20px;
+    color: #1e293b;
+}
+
+.container {
+    width: 100%;
+    max-width: 620px;
+    margin: auto;
+    background: #ffffff;
+    padding: 32px;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Header */
+
+.header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.header h1 {
+    font-size: 34px;
+    margin-bottom: 12px;
+    color: #0f172a;
+}
+
+.header p {
+    color: #64748b;
+    font-size: 16px;
+}
+
+
+/* Input */
+
+.input-section {
+    margin-bottom: 30px;
+}
+
+.input-section label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #334155;
+}
+
+textarea {
+    width: 100%;
+    min-height: 130px;
+    padding: 18px;
+    border: 2px solid #e2e8f0;
+    border-radius: 14px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    resize: vertical;
+    outline: none;
+    background: #f8fafc;
+    color: #1e293b;
+    transition: 0.25s;
+}
+
+textarea::placeholder {
+    color: #94a3b8;
+}
+
+textarea:focus {
+    border-color: #06b6d4;
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(6, 182, 212, 0.12);
+}
+
+
+/* Button */
+
+button {
+    width: 100%;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #0891b2, #06b6d4);
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(6, 182, 212, 0.3);
+}
+
+
+/* Result */
+
+.result {
+    margin-top: 35px;
+    padding: 28px;
+    border-radius: 18px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+}
+
+.result h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: #0f172a;
+}
+
+
+/* Sentiment */
+
+.sentiment-box {
+    text-align: center;
+    padding: 24px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ecfeff, #f0fdfa);
+    border: 1px solid #a5f3fc;
+    margin-bottom: 20px;
+}
+
+.sentiment-label {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.sentiment-value {
+    font-size: 30px;
+    font-weight: bold;
+    color: #0891b2;
+}
+
+
+/* Scores */
+
+.scores {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    width: 100%;
+}
+
+.score-card {
+    background: white;
+    padding: 20px;
+    border-radius: 14px;
+    text-align: center;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+    min-width: 0;
+}
+
+.score-card p:first-child {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.score-card p:last-child {
+    font-size: 23px;
+    font-weight: bold;
+    color: #0f766e;
+}
+
+
+/* Footer */
+
+.footer {
+    text-align: center;
+    margin-top: 30px;
+    color: #94a3b8;
+    font-size: 13px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 25px 15px;
+    }
+
+    .container {
+        padding: 28px 20px;
+    }
+
+    .header h1 {
+        font-size: 32px;
+    }
+
+    .scores {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Sentiment Colors */
+
+.sentiment-box.positive {
+    background: #ecfdf5;
+    border-color: #86efac;
+}
+
+.sentiment-box.positive .sentiment-value {
+    color: #16a34a;
+}
+
+
+.sentiment-box.negative {
+    background: #fef2f2;
+    border-color: #fca5a5;
+}
+
+.sentiment-box.negative .sentiment-value {
+    color: #dc2626;
+}
+
+
+.sentiment-box.neutral {
+    background: #eff6ff;
+    border-color: #93c5fd;
+}
+
+.sentiment-box.neutral .sentiment-value {
+    color: #2563eb;
+}
+
+/* Buttons */
+
+.button-group {
+    display: flex;
+    gap: 12px;
+    margin-top: 5px;
+}
+
+.button-group button {
+    flex: 1;
+    margin-top: 0;
+}
+
+.clear-button {
+    flex: 0.35;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    background: #475569;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.clear-button:hover {
+    background: #334155;
+    transform: translateY(-2px);
+}
