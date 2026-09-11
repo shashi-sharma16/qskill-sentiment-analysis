@@ -63,7 +63,7 @@ sentiment-analysis/
 ### 1. Clone the repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/shashi-sharma16/qskill-sentiment-analysis.git
 cd sentiment-analysis
 ```
 
